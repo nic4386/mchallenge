@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+
+    <ui:define name="content">
+        <f:metadata>
+            <f:viewParam name="pid" value="#{employeeDetailsBean.pid}"/>
+            <f:event type="javax.faces.event.PreRenderComponentEvent" listener="#{employeeDetailsBean.loadEmployee}"/>
+        </f:metadata>
+	
+
+		<h:form>
+			 	<p>
+			 	<h:outputLabel value="ID: #{employeeDetailsBean.employee.employeeID}" />
+			 	</p>
+				<h:outputLabel for="firstName" value="Name:"/>
+				<h:panelGroup>
+					<h:inputText id="firstNamee" value="#{employeeDetailsBean.employee.firstName}"/>
+					<h:message for="firstName" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="lastName" value="Last Name:"/>
+				<h:panelGroup>
+					<h:inputText id="lastName" value="#{employeeDetailsBean.employee.lastName}"/>
+					<h:message for="lastName" styleClass="error"/>
+				</h:panelGroup>
+        
+            
+            
+           <p> <h:outputLabel value="ADDRESS: #{employeeDetailsBean.employee.address}" /></p>
+           <p> <h:outputLabel value="HIRE DATE: #{employeeDetailsBean.employee.hireDate}"/></p>
+            <h:commandButton type="submit" id="update" value="Update" action="#{employeeDetailsBean.updateEmployee}"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>
