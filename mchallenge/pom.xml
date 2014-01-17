@@ -83,7 +83,7 @@
     </repository>
   </repositories>
   <build>
-    <finalName>mchallenge.war</finalName>
+    <finalName>mchallenge</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
